@@ -61,12 +61,9 @@ if __name__ == "__main__":
         else:
             t = 0.0
         
-        # Solucion del error si el peso da None
-        # try:
+        # funciones para calcular el peso
         peso_d = pipe_fun.peso(od, t)
         peso_t = pipe_fun.peso_total(peso_d, large)
-        # except TypeError as e:
-            # print(f'Error: {e}')
 
         # Datos de salida
 

@@ -6,11 +6,14 @@ from fractions import Fraction
 @luis ortega
 """
 class Funciones:
-
+    
     def __init__(self):
         pass
 
-    def out_diameter(self, pulgada) -> float:
+    def __str__(self) -> str:
+        return f'Objeto para calcular avance y peso de tuberías de inox y acero al carbon.'
+
+    def out_diameter(self, pulgada: float):
         """
         Devuleve el diametro exterior de la tubería con el uso de diccionario
         """
@@ -28,9 +31,11 @@ class Funciones:
             return od
         elif pulgada >= 20:
             od = pulgada*25.4
-        else: return od
+        else: 
+            return od
+        return od
 
-    def wall_thickness_inox(self, cedula, pulgada) -> float:
+    def wall_thickness_inox(self, cedula: str, pulgada: float) -> float:
         """
         Retorna el espesor de pared dependiendo la cedula
         """
@@ -106,7 +111,7 @@ class Funciones:
         # Retorno
         return wall_tick
 
-    def wall_tickness_ac(self, cedula, pulgada) -> float:
+    def wall_tickness_ac(self, cedula: str, pulgada: float) -> float:
         wall_tick: float = 0.0
         str_pulgada = str(pulgada)
         sch_5 = { # 1/8 - 30
@@ -237,7 +242,7 @@ class Funciones:
             print(f'Pulgadas no aceptables, error : {e}')
             return wall_tick
 
-    def large_pipe(self, text) -> float:
+    def large_pipe(self, text: str) -> float:
         """
         Extrae y retorna el largo de la tubería
         """
@@ -258,7 +263,7 @@ class Funciones:
             else: large = 0.0
         return large
 
-    def capture_in(self, text) -> float:
+    def capture_in(self, text: str) -> float:
         """
         regresa las pulgadas de la tubería
         """
@@ -287,7 +292,7 @@ class Funciones:
         else : return pipe_in
         return pipe_in
 
-    def tan(self, grados) -> float:
+    def tan(self, grados: float) -> float:
         """
         Retorna la tangente de los grados colocados para el avance de grados especiales
         """
@@ -295,7 +300,7 @@ class Funciones:
         tangente: float = math.tan(math.radians(new_grade))
         return tangente
 
-    def advanced_elbow90(self, inch) -> float:
+    def advanced_elbow90(self, inch: float) -> float:
         """
         Retorn del avance en mm de un codo de 90 R.L.
         """
@@ -303,47 +308,47 @@ class Funciones:
         ad_90 = advanced_90*25.4 # codo de 90 grade
         return ad_90
 
-    def advanced_elbow45(self, inch) -> float:
+    def advanced_elbow45(self, inch: float) -> float:
         advanced_45 = inch*0.625
         ad_45 = advanced_45*25.4 # codo de 45 grade
         return ad_45
 
-    def advanced_elbow42(self, tan_42, inch) -> float:
+    def advanced_elbow42(self, tan_42: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 42 R.L.
         """
         ad_42: float = inch*38.1*tan_42 # codo degradado especial
         return ad_42
 
-    def advanced_elbow52(self, tan_52, inch) -> float:
+    def advanced_elbow52(self, tan_52: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 52 R.L.
         """
         ad_52: float = inch*38.1*tan_52 # codo degradado especial
         return ad_52
 
-    def advanced_elbow60(self, tan_60, inch) -> float:
+    def advanced_elbow60(self, tan_60: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 60 R.L.
         """
         ad_60: float = inch*38.1*tan_60 # codo degradado especial
         return ad_60
 
-    def advanced_elbow65(self, tan_65, inch) -> float:
+    def advanced_elbow65(self, tan_65: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 65 R.L.
         """
         ad_65: float = inch*38.1*tan_65 # codo degradado especial
         return ad_65
 
-    def advanced_elbow70(self, tan_70, inch) -> float:
+    def advanced_elbow70(self, tan_70: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 70 R.L.
         """
         ad_70: float = inch*38.1*tan_70 # codo degradado especial
         return ad_70
 
-    def advanced_elbow80(self, tan_80, inch) -> float:
+    def advanced_elbow80(self, tan_80: float, inch: float) -> float:
         """
         Retorno del avance en mm de un codo de 80 R.L.
         """
@@ -357,15 +362,15 @@ class Funciones:
         calculo: float = (od-t)*t*c
         return calculo
 
-    def peso_total(self, peso_d, large) -> float:
+    def peso_total(self, peso_d: float, large: float) -> float:
         """
         Retorna el peso total de la tubería
         """
-        result_full = peso_d*large
+        result_full: float = peso_d*large
         return result_full
 
-    def material_pipe(self, text) -> str:
-        material = None
+    def material_pipe(self, text: str) -> str:
+        material: str = "A.C" # default
         acero_carbon = re.search(r"A.C.|106B|A106 GR.B|CARBON STEEL|ACERO AL CARBON", text, re.IGNORECASE)
         if acero_carbon:
             material = "A.C."
@@ -376,12 +381,12 @@ class Funciones:
             return material
         else: return material
 
-    def cedula_ss(self, text) -> str:
+    def cedula_ss(self, text: str) -> str:
         """
         Regresa la cedula de la tuberia de acero inoxidable
         """
         text.upper()
-        cedula = None
+        cedula: str = "S-10S" # default
         cedula_pattern_5 = re.search(r"S-5S|CEDULA 5S|SCHEDULE 5S", text, re.IGNORECASE)
         if cedula_pattern_5:
             cedula = "S-5S"
@@ -400,11 +405,11 @@ class Funciones:
             return cedula
         else: return cedula
 
-    def cedula_ac(self, text) -> str:
+    def cedula_ac(self, text: str) -> str:
         """
         Regresa la cedula de la tuberia de acero al carbón
         """
-        cedula = None
+        cedula: str = "S-10S"
         cedula_pattern_5 = re.search(r"S-5S|CEDULA 5S|SCHEDULE 5S", text, re.IGNORECASE)
         if cedula_pattern_5:
             cedula = "S-5S"
