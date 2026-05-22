@@ -14,7 +14,7 @@ if __name__ == "__main__":
     text = input()
     # Primera informacion
     if not text:
-        messe = "[green]El texto esta vacio"
+        messe = "[red]El texto esta vacio"
         design.view_error(messe)
     else:
         ### Llamar a las funciones
@@ -61,9 +61,12 @@ if __name__ == "__main__":
         else:
             t = 0.0
         
-        # funciones para calcular el peso
+        # Solucion del error si el peso da None
+        # try:
         peso_d = pipe_fun.peso(od, t)
         peso_t = pipe_fun.peso_total(peso_d, large)
+        # except TypeError as e:
+            # print(f'Error: {e}')
 
         # Datos de salida
 
@@ -88,24 +91,30 @@ if __name__ == "__main__":
         seven_one = f"El avance de un codo de 80 grados,de {pulgada}:"
         seven_two = f"[green]{av_80} mm"
 
-        eight_one = f"El peso total:"
-        eight_two = f"[green]{peso_t} kg x {large} M"
+        eight_one = f"El espesor de pared:"
+        eight_two = f"[green]{t} mm"
+
+        nine_one = f"El peso por metro lineal teorico:"
+        nine_two = f"[green]{peso_d} kg"
+
+        ten_one = f"El peso total teorico:"
+        ten_two = f"[green]{peso_t} kg x {large} M"
 
         # Creditos
-        nine_one = f'~pipecoding'
-        nine_two = f'@luisOrtga'
+        eleven_one = f'~pipecoding'
+        eleven_two = f'@luisOrtga'
 
         if pulgada == 0 and av_90 == 0 and av_45 == 0 and peso_d == 0 and large == 0:
-            ms = "[green]No se puede calcular por falta de datos. vuelva a intentarlo."
+            ms = "[red]No se puede calcular por falta de datos. vuelva a intentarlo."
             design.view_error(ms)
         elif large == 0 and t == 0:
             # Creditos
             # @Override
-            eight_one = f'~pipecoding'
-            eight_two = f'@luisOrtga'
+            eight_one = f'falto la cedula y la longitud'
+            eight_two = f'~pipecoding @luisOrtga'
 
             # Mostrar los datos
             design.view_less(one_one,one_two,two_one,two_two,three_one,three_two,four_one,four_two,five_one,five_two,six_one,six_two,seven_one,seven_two,eight_one,eight_two)
         else:
             # Mostrar los datos
-            design.__view__(one_one,one_two,two_one,two_two,three_one,three_two,four_one,four_two,five_one,five_two,six_one,six_two,seven_one,seven_two,eight_one,eight_two,nine_one,nine_two)
+            design.__view__(one_one,one_two,two_one,two_two,three_one,three_two,four_one,four_two,five_one,five_two,six_one,six_two,seven_one,seven_two,eight_one,eight_two,nine_one,nine_two,ten_one,ten_two,eleven_one,eleven_two)
