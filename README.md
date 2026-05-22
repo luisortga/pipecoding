@@ -2,6 +2,8 @@
 
 ![image alt](https://github.com/luisortga/pipecoding/blob/b1119b90c5d3d9b56664d30bdbbb399936c72449/preview_precaucioin.png)
 
+![image alt](https://github.com/luisortga/pipecoding/blob/45cdd8e107d9c9eabd664c4997ef79da794ff807/preview_error.png)
+
 # Pipecoding
 
 ## Programa de consola para calculos basicos de tubería de acero al carbon e inoxidable en base a la normal ASME B36.10M y ASME B36.19M, funciona con Planos de tubería de PEMEX, Ica Fluor, Bonatti, Techint
