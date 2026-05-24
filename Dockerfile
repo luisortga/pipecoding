@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Establecemos el directorio de trabajo
-WORKDIR /app
+WORKDIR /src
 
 # instalar librerias
 RUN pip install --no-cache-dir -r requirements.txt
@@ -11,4 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Ejecutamos el script de Python
-CMD ["python", "src/main.py"]
+CMD ["python", "main.py"]
