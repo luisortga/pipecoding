@@ -12,3 +12,5 @@ COPY . .
 
 # Ejecutamos el script de Python
 CMD ["python", "main.py"]
+
+#Docker
