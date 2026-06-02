@@ -10,8 +10,12 @@ class Funciones:
     def __init__(self):
         pass
 
-    def __str__(self) -> str:
-        return f'Objeto para calcular avance y peso de tuberías de inox y acero al carbon.'
+    def __repr__(self) -> str:
+        return f'Funciones de tubería para calcular el avance y peso teorico de tuberías de inox y acero al carbon.'
+    
+    def comillas(self, text: str) -> str:
+        result = re.sub(r'"', " Pipes", text)
+        return result
 
     def out_diameter(self, pulgada: float):
         """

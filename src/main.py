@@ -1,5 +1,6 @@
 from pipe_funciones import Funciones
 from diseño import Style
+import re
 # orteg
 
 # Objetos
@@ -19,6 +20,12 @@ if __name__ == "__main__":
     else:
         ### Llamar a las funciones
         # Obtenemos las pulgadas de la tubería
+        pattern = r'"'
+        result = re.search(pattern, text)
+        if result:
+            text_result = pipe_fun.comillas(text)
+            text = text_result
+         
         pulgada = pipe_fun.capture_in(text)
 
         # Obtenemos la tangente de los grados especiales
