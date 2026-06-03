@@ -14,7 +14,7 @@ class Funciones:
         return f'Funciones de tubería para calcular el avance y peso teorico de tuberías de inox y acero al carbon.'
     
     def comillas(self, text: str) -> str:
-        result = re.sub(r'"', " Pipes", text)
+        result = re.sub(r"\s*\"\s*", " Pipes", text)
         return result
 
     def out_diameter(self, pulgada: float):

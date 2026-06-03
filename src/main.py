@@ -20,7 +20,7 @@ if __name__ == "__main__":
     else:
         ### Llamar a las funciones
         # Obtenemos las pulgadas de la tubería
-        pattern = r'"'
+        pattern = r"\s*\"\s*"
         result = re.search(pattern, text)
         if result:
             text_result = pipe_fun.comillas(text)
