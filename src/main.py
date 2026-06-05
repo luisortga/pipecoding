@@ -1,5 +1,5 @@
 from pipe_funciones import Funciones
-from diseño import Style
+from designe import Style
 import re
 # orteg
 
