@@ -117,7 +117,19 @@ if __name__ == "__main__":
             eight_two = f'~pipecoding @luisOrtga'
 
             # Mostrar los datos
-            design.incomplete_data(one_one,one_two,two_one,two_two,three_one,three_two,four_one,four_two,five_one,five_two,six_one,six_two,seven_one,seven_two,eight_one,eight_two)
+            design.incomplete_data(
+                one_one,one_two,two_one,two_two,
+                three_one,three_two,four_one,four_two,
+                five_one,five_two,six_one,six_two,
+                seven_one,seven_two,eight_one,eight_two
+                )
         else:
             # Mostrar los datos
-            design.complete_data(one_one,one_two,two_one,two_two,three_one,three_two,four_one,four_two,five_one,five_two,six_one,six_two,seven_one,seven_two,eight_one,eight_two,nine_one,nine_two,ten_one,ten_two,eleven_one,eleven_two)
+            design.complete_data(
+                one_one,one_two,two_one,two_two,
+                three_one,three_two,four_one,four_two,
+                five_one,five_two,six_one,six_two,
+                seven_one,seven_two,eight_one,eight_two,
+                nine_one,nine_two,ten_one,ten_two,
+                eleven_one,eleven_two
+                )
