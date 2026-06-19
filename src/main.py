@@ -26,7 +26,7 @@ if __name__ == "__main__":
             text_result = pipe_fun.comillas(text)
             text = text_result
          
-        pulgada = pipe_fun.capture_in(text)
+        pulgadas = pipe_fun.capture_in(text)
 
         # Obtenemos la tangente de los grados especiales
         tg_42 = pipe_fun.tan(42)
@@ -37,16 +37,16 @@ if __name__ == "__main__":
         tg_80 = pipe_fun.tan(80)
 
         # Obtenemos el avance de los codos de 90 y 45
-        av_90 = pipe_fun.advanced_elbow90(pulgada)
-        av_45 = pipe_fun.advanced_elbow45(pulgada)
+        av_90 = pipe_fun.advanced_elbow90(pulgadas)
+        av_45 = pipe_fun.advanced_elbow45(pulgadas)
 
         # Obtenemos el avance de los codos especiales
-        av_42 = pipe_fun.advanced_elbow42(tg_42, pulgada)
-        av_52 = pipe_fun.advanced_elbow52(tg_52, pulgada)
-        av_60 = pipe_fun.advanced_elbow60(tg_60, pulgada)
-        av_65 = pipe_fun.advanced_elbow65(tg_65, pulgada)
-        av_70 = pipe_fun.advanced_elbow70(tg_70, pulgada)
-        av_80 = pipe_fun.advanced_elbow80(tg_80, pulgada)
+        av_42 = pipe_fun.advanced_elbow42(tg_42, pulgadas)
+        av_52 = pipe_fun.advanced_elbow52(tg_52, pulgadas)
+        av_60 = pipe_fun.advanced_elbow60(tg_60, pulgadas)
+        av_65 = pipe_fun.advanced_elbow65(tg_65, pulgadas)
+        av_70 = pipe_fun.advanced_elbow70(tg_70, pulgadas)
+        av_80 = pipe_fun.advanced_elbow80(tg_80, pulgadas)
 
         # Obtenemos del metodo large_pipe el largo de la tuberia en una variable float
         large = pipe_fun.large_pipe(text)
@@ -55,16 +55,16 @@ if __name__ == "__main__":
         material = pipe_fun.material_pipe(text)
 
         # Obtener el od con la funcion
-        od = pipe_fun.out_diameter(pulgada)
+        od = pipe_fun.out_diameter(pulgadas)
 
         # Obtener la cedula y
         # Espesor de pared wall thickness
         if material == "S.S.":
             cedula = pipe_fun.cedula_ss(text)
-            t = pipe_fun.wall_thickness_inox(cedula, pulgada)
+            t = pipe_fun.wall_thickness_inox(cedula, pulgadas)
         elif material == "A.C.":
             cedula = pipe_fun.cedula_ac(text)
-            t = pipe_fun.wall_tickness_ac(cedula, pulgada)
+            t = pipe_fun.wall_tickness_ac(cedula, pulgadas)
         else:
             t = 0.0
         
@@ -73,25 +73,25 @@ if __name__ == "__main__":
 
         # Datos de salida
 
-        one_one = f"El avance de un codo de 90 grados de {pulgada}:"
+        one_one = f"El avance de un codo de 90 grados de {pulgadas}:"
         one_two = f"[green]{av_90} mm"
 
-        two_one = f"El avance de un codo de 45 grados de {pulgada}:"
+        two_one = f"El avance de un codo de 45 grados de {pulgadas}:"
         two_two = f"[green]{av_45} mm"
 
-        three_one = f"El avance de un codo de 52 grados de {pulgada}:"
+        three_one = f"El avance de un codo de 52 grados de {pulgadas}:"
         three_two = f"[green]{av_52} mm"
 
-        four_one = f"El avance de un codo de 60 grados de {pulgada}:"
+        four_one = f"El avance de un codo de 60 grados de {pulgadas}:"
         four_two = f"[green]{av_60} mm"
 
-        five_one = f"El avance de un codo de 65 grados de {pulgada}:"
+        five_one = f"El avance de un codo de 65 grados de {pulgadas}:"
         five_two = f"[green]{av_65} mm"
 
-        six_one = f"El avance de un codo de 70 grados de {pulgada}:"
+        six_one = f"El avance de un codo de 70 grados de {pulgadas}:"
         six_two = f"[green]{av_70} mm"
 
-        seven_one = f"El avance de un codo de 80 grados,de {pulgada}:"
+        seven_one = f"El avance de un codo de 80 grados,de {pulgadas}:"
         seven_two = f"[green]{av_80} mm"
 
         eight_one = f"El espesor de pared:"
@@ -107,7 +107,7 @@ if __name__ == "__main__":
         eleven_one = f'~pipecoding'
         eleven_two = f'@luisOrtga'
 
-        if pulgada == 0 and av_90 == 0 and av_45 == 0 and peso_d == 0 and large == 0:
+        if pulgadas == 0 and av_90 == 0 and av_45 == 0 and peso_d == 0 and large == 0:
             ms = "[red]No se puede calcular por falta de datos. vuelva a intentarlo."
             design.view_error(ms)
         elif large == 0 and t == 0:
