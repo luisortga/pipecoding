@@ -49,53 +49,29 @@ class Funciones:
         sch_5s = { # 1/8 - 30
             "0.125": 1.65, "0.25": 1.65, "0.375": 1.65, "0.5": 1.65, "0.75": 1.65, "1.0": 1.65, "1.25": 1.65, "1.5": 1.65, "2.0": 1.65, "2.25" : 2.11, "3.0": 2.11, "3.5": 2.11, "4.0": 2.11, "5.0": 2.77, "6.0": 2.77, "8.0": 2.77, "10.0": 3.4, "12.0": 3.96, "14.0": 3.96, "16.0": 4.19, "18.0": 4.19, "20.0": 4.78, "22.0": 4.78, "24": 5.54, "30.0": 6.35
         }
-        sch_10s = {
-            "0.125": 1.24, "0.25": 1.65, "0.375": 1.65, "0.5": 2.11, "0.75": 2.11, "1.0": 2.77, "1.25": 2.77, "1.5": 2.77, "2.0": 2.77, "2.25" : 3.05, "3.0": 3.05, "3.5": 3.05, "4.0": 3.05, "5.0": 3.4, "6.0": 3.4, "8.0": 3.76, "10.0": 4.19, "12.0": 4.57, "14.0": 4.78, "16.0": 4.78, "18.0": 4.78, "20.0": 5.54, "22.0": 5.54, "24.0": 6.35, "26.0": 7.92, "28.0": 7.92, "30.0": 7.92, "32.0": 7.92, "34.0": 7.92, "36.0": 7.92
-        }
-        print(sch_5s, sch_10s, str_pulgada) # recuerda eliminar esta linea
         # wall tick en cedula 10S
-        # wall tick en cedula 40S    
-        if cedula == "S-40S":
-            if pulgada == 0.125: wall_tick = 1.73
-            elif pulgada == 0.25: wall_tick = 2.24
-            elif pulgada == 0.375: wall_tick = 2.31
-            elif pulgada == 0.5: wall_tick = 2.77
-            elif pulgada == 0.75: wall_tick = 2.87
-            elif pulgada == 1: wall_tick = 3.38
-            elif pulgada == 1.25: wall_tick = 3.56
-            elif pulgada == 1.5: wall_tick = 3.68
-            elif pulgada == 2: wall_tick = 3.91
-            elif pulgada == 2.5: wall_tick = 5.16
-            elif pulgada == 3: wall_tick = 5.49
-            elif pulgada == 3.5: wall_tick = 5.74
-            elif pulgada == 4: wall_tick = 6.02
-            elif pulgada == 5: wall_tick = 6.55
-            elif pulgada == 6: wall_tick = 7.11
-            elif pulgada == 8: wall_tick = 8.18
-            elif pulgada == 10: wall_tick = 9.27
-            elif pulgada in (12, 14, 16, 18, 20, 22, 24, 30): wall_tick = 9.53
-        
+        sch_10s = { # 1/8 - 36
+            "0.125": 1.24, "0.25": 1.65, "0.375": 1.65, "0.5": 2.11, "0.75": 2.11, "1.0": 2.77, "1.25": 2.77, "1.5": 2.77, "2.0": 2.77, "2.5" : 3.05, "3.0": 3.05, "3.5": 3.05, "4.0": 3.05, "5.0": 3.4, "6.0": 3.4, "8.0": 3.76, "10.0": 4.19, "12.0": 4.57, "14.0": 4.78, "16.0": 4.78, "18.0": 4.78, "20.0": 5.54, "22.0": 5.54, "24.0": 6.35, "30.0": 7.92
+        }
+        # wall tick en cedula 40S
+        sch_40s = {
+            "0.125": 1.73, "0.25": 2.24, "0.375": 2.31, "0.5": 2.77, "0.75": 2.87, "1.0": 3.38, "1.25": 3.56, "1.5": 3.68, "2.0": 3.91, "2.5" : 5.16, "3.0": 5.49, "3.5": 5.74, "4.0": 6.02, "5.0": 6.55, "6.0": 7.11, "8.0": 8.18, "10.0": 9.27, "12.0": 9.53, "14.0": 9.53, "16.0": 9.53, "18.0": 9.53, "20.0": 9.53, "22.0": 9.53, "24.0": 9.53, "30.0": 9.53
+        }
         # wall tick en cedula 80S
-        elif cedula == "S-80S":
-            if pulgada == 0.125: wall_tick = 2.41
-            elif pulgada == 0.25: wall_tick = 3.02
-            elif pulgada == 0.375: wall_tick = 3.2
-            elif pulgada == 0.5: wall_tick = 3.73
-            elif pulgada == 0.75: wall_tick = 3.91
-            elif pulgada == 1: wall_tick = 4.55
-            elif pulgada == 1.25: wall_tick = 4.85
-            elif pulgada == 1.5: wall_tick = 5.08
-            elif pulgada == 2: wall_tick = 5.54
-            elif pulgada == 2.5: wall_tick = 7.01
-            elif pulgada == 3: wall_tick = 7.62
-            elif pulgada == 3.5: wall_tick = 8.08
-            elif pulgada == 4: wall_tick = 8.56
-            elif pulgada == 5: wall_tick = 9.53
-            elif pulgada == 6: wall_tick = 10.97
-            elif pulgada in (8, 10, 12, 14, 16, 18, 20, 22, 24, 30): wall_tick = 12.7
-        else: wall_tick = 0.0
-        # Retorno
-        return wall_tick
+        sch_80s = {
+            "0.125": 2.41, "0.25": 3.02, "0.375": 3.2, "0.5": 3.73, "0.75": 3.91, "1.0": 4.55, "1.25": 4.85, "1.5": 5.08, "2.0": 5.54, "2.5" : 7.01, "3.0": 7.62, "3.5": 8.08, "4.0": 8.56, "5.0": 9.53, "6.0": 10.97, "8.0": 12.7, "10.0": 12.7, "12.0": 12.7, "14.0": 12.7, "16.0": 12.7, "18.0": 12.7, "20.0": 12.7, "22.0": 12.7, "24.0": 12.7, "30.0": 12.7
+        }
+        try: # solucion del error si las pulgadas no estan en el diccionario, pulgadas no validas
+            if cedula == "S-5S":
+                wall_tick = sch_5s[str_pulgada]
+                return wall_tick
+            elif cedula == "S-10S":
+                wall_tick = sch_10s[str_pulgada]
+                return wall_tick
+        except KeyError as e:
+            print(f'Pulgadas no aceptables, error : {e}')
+            return wall_tick
+            
 
     def wall_tickness_ac(self, cedula: str, pulgada: float) -> float:
         wall_tick: float = 0.0
