@@ -39,7 +39,14 @@ class Style:
         console = Console()
         console.print(table)
 
-    def incomplete_data(self,a: str,b: str,c: str,d: str,e: str,f: str,g: str,h: str,i: str,j: str,k: str,l: str,m: str,n: str,o: str,p: str):
+
+    def incomplete_data(
+        self, a: str, b: str, c: str,
+        d: str, e: str, f: str, g: str,
+        h: str, i: str, j: str, k: str,
+        l: str, m: str, n: str, o: str,
+        p: str
+        ):
         """
         funcion para crear la tabla y el diseño
         """
