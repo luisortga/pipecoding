@@ -44,36 +44,18 @@ class Funciones:
         Retorna el espesor de pared dependiendo la cedula
         """
         wall_tick: float = 0.0
+        str_pulgada = str(pulgada)
         # wall tick en cedula 5S
-        if cedula == "S-5S":
-            if pulgada in (0.125, 0.25, 0.375, 0.5, 0.75, 1, 1.25, 1.5, 2): wall_tick = 1.65
-            elif pulgada in (2.5, 3, 3.5, 4): wall_tick = 2.11
-            elif pulgada in (5, 6, 8): wall_tick = 2.77
-            elif pulgada == 10: wall_tick = 3.4
-            elif pulgada in (12, 14): wall_tick = 3.96
-            elif pulgada in (16, 18): wall_tick = 4.19
-            elif pulgada in (20, 22): wall_tick = 4.78
-            elif pulgada == 24: wall_tick = 5.54
-            elif pulgada == 30: wall_tick = 6.35
-
+        sch_5s = { # 1/8 - 30
+            "0.125": 1.65, "0.25": 1.65, "0.375": 1.65, "0.5": 1.65, "0.75": 1.65, "1.0": 1.65, "1.25": 1.65, "1.5": 1.65, "2.0": 1.65, "2.25" : 2.11, "3.0": 2.11, "3.5": 2.11, "4.0": 2.11, "5.0": 2.77, "6.0": 2.77, "8.0": 2.77, "10.0": 3.4, "12.0": 3.96, "14.0": 3.96, "16.0": 4.19, "18.0": 4.19, "20.0": 4.78, "22.0": 4.78, "24": 5.54, "30.0": 6.35
+        }
+        sch_10s = {
+            "0.125": 1.24, "0.25": 1.65, "0.375": 1.65, "0.5": 2.11, "0.75": 2.11, "1.0": 2.77, "1.25": 2.77, "1.5": 2.77, "2.0": 2.77, "2.25" : 3.05, "3.0": 3.05, "3.5": 3.05, "4.0": 3.05, "5.0": 3.4, "6.0": 3.4, "8.0": 3.76, "10.0": 4.19, "12.0": 4.57, "14.0": 4.78, "16.0": 4.78, "18.0": 4.78, "20.0": 5.54, "22.0": 5.54, "24.0": 6.35, "26.0": 7.92, "28.0": 7.92, "30.0": 7.92, "32.0": 7.92, "34.0": 7.92, "36.0": 7.92
+        }
+        print(sch_5s, sch_10s, str_pulgada) # recuerda eliminar esta linea
         # wall tick en cedula 10S
-        elif cedula == "S-10S":
-            if pulgada == 0.125: wall_tick = 1.24
-            elif pulgada in (0.25, 0.375): wall_tick = 1.65
-            elif pulgada in (0.5, 0.75): wall_tick = 2.11
-            elif pulgada in (1, 1.25, 1.5, 2): wall_tick = 2.77
-            elif pulgada in (2.5, 3, 3.5, 4): wall_tick = 3.05
-            elif pulgada in (5, 6): wall_tick = 3.4
-            elif pulgada == 8: wall_tick = 3.76
-            elif pulgada == 10: wall_tick = 4.19
-            elif pulgada == 12: wall_tick = 4.57
-            elif pulgada in (14, 16, 18): wall_tick = 4.78
-            elif pulgada in (20, 22): wall_tick = 5.54
-            elif pulgada == 24: wall_tick = 6.35
-            elif pulgada == 8: wall_tick = 7.92
-
         # wall tick en cedula 40S    
-        elif cedula == "S-40S":
+        if cedula == "S-40S":
             if pulgada == 0.125: wall_tick = 1.73
             elif pulgada == 0.25: wall_tick = 2.24
             elif pulgada == 0.375: wall_tick = 2.31
