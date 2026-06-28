@@ -1,6 +1,10 @@
 from rich.table import Table
 from rich.console import Console
 # orteg
+"""
+    Modulo de diseño, uso de rich para todo el diseño de la salida en consola.
+"""
+
 
 class Style:
 
