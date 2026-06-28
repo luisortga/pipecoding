@@ -1,5 +1,5 @@
 from pipe_funciones import Funciones
-from designe import Style
+from design import Style
 import re
 """
     Modulo principal del programa
