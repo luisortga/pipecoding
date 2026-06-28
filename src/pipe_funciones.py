@@ -3,7 +3,7 @@ import math
 from fractions import Fraction
 
 """
-@luis ortega
+    Modulo de logica, toda la logica de la tuberia esta en este modulo, para calcular el avance de los codos de 90 y 45 grados, asi como los codos especiales de 42, 52, 60, 65, 70 y 80 grados.
 """
 class Funciones:
     

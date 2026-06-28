@@ -1,7 +1,10 @@
 from pipe_funciones import Funciones
 from designe import Style
 import re
-# orteg
+"""
+    Modulo principal del programa
+"""
+
 
 # Objetos
 pipe_fun = Funciones()
